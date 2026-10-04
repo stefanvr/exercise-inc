@@ -2,138 +2,138 @@
 
 ## Algemene notities
 
-- een double run en single run van speed climen kunnen tegelijkertijd runnen.
+- Een double run en een single run van speed climbing kunnen tegelijkertijd lopen.
 
 ## Hoofdmenu
 
-- Algemene statestieken pagina (p5)
-  - statestiek klimmen (p5)
-  - statrsitek speedclimv (p5)
+- Algemene statistiekenpagina (p5)
+  - Statistiek klimmen (p5)
+  - Statistiek speed climbing (p5)
 
-## Strech timers
+## Stretch timers
 
 - 30, 5
-- custom, custom
+- Custom, custom
 
 ## Speed Climbing (p4)
 
-### Statestieken
+### Statistieken
 
-#### training single
+#### Training single
 
 - Personal single PB
 - Personal single PB this week
-- Personal single PB this Month
-- Personal Sessions avarge PB
-- Personal avarage this week
-- Personal avarage this Month
-- Personal avarga sessions avarage this week
-- Personal avarga sessions avarage this month
+- Personal single PB this month
+- Personal session average PB
+- Personal average this week
+- Personal average this month
+- Personal average session average this week
+- Personal average session average this month
 - Toekomst grafiek
 
-#### training double
+#### Training double
 
-> deze hieronder wil je en voor bijde singles vij elke (1 double run) en voor alle singles hier bij elaar samen
+> Deze hieronder wil je zowel voor beide singles van elke double run als voor alle singles hier bij elkaar.
 
-- Personal Doubles PB
-- Personal Doubles PB this week
-- Personal Doubles PB this Month
-- Personal Sessions avarge PB
-- Personal avarage this week
-- Personal avarage this Month
-- Personal avarga sessions avarage this week
-- Personal avarga sessions avarage this month
+- Personal doubles PB
+- Personal doubles PB this week
+- Personal doubles PB this month
+- Personal session average PB
+- Personal average this week
+- Personal average this month
+- Personal average session average this week
+- Personal average session average this month
 - Toekomst grafiek
 
-#### compititie
+#### Competitie
 
 - Beste PB in comp
-- Beste gemiddelde COM
-- toekomst grafiek
-- rest wat hierboven ook heeft
+- Beste gemiddelde comp
+- Toekomst grafiek
+- De rest van wat hierboven ook staat
 
-## training
+## Training
 
 ### Single
 
 #### Top bar
 
 - PB all time single zien (p2)
-- PB week single zien  (p2)
-- avarage Time all time(p2)
-- Avarage Time deze week(p2)
-- knop naar statestiek pagina(p2)
-- knop voor Start Sessie (dat beeld komt onder de top bar met start sessie grayed out)
+- PB week single zien (p2)
+- Average time all time (p2)
+- Average time deze week (p2)
+- Knop naar statistiekpagina (p2)
+- Knop voor Start sessie (dat beeld komt onder de top bar, met Start sessie grayed out)
 
-##### top bar
-
-- PB sessie single zien(p2)
-- avarage Time all time(p2)
-- Hoelang de sessie is(p2)
-- sessie afronden met convermatie(p2)
-
-#### Sessie
-
-- Lijst met pogingen deze sessie
-- Opslaan poging met datum tijd of DNS + notities
-- Lijst met 5/10 (nog te bepalen) meest resentelijke Sessie met datum tijd, gemiddelde tijd, beste tijd, hvl DNF, plus know om details te zien
-  - met details is notities, gemiddelde sessie tijd, datum, beste sessie tijd, hvl DNF (p0.5)
-- Sorteer systeem voor sessies (p5)
-
-### double
-
-> deze hieronder wil je en voor bijde singles vij elke (1 double run) en voor alle singles hier bij elaar samen
-
-- PB all time Double zien
-- PB week Double zien
-- avarage Time all time
-- Avarage Time deze week
-- knop naar statestiek pagina
-- knop voor Start Sessie (dat beeld komt onder de top bar met start sessie grayed out)
-
-#### top bar
-
-> deze hieronder wil je en voor bijde singles vij elke (1 double run) en voor alle singles hier bij elaar samen
+##### Top bar
 
 - PB sessie single zien (p2)
-- avarage Time all time (p2)
-- Hoelang de sessie is (p2)
-- sessie afronden met convermatie (p2)
+- Average time all time (p2)
+- Hoelang de sessie duurt (p2)
+- Sessie afronden met bevestiging (p2)
 
 #### Sessie
 
-- Lijst met pogingen deze sessie
-- Opslaan poging met datum tijd, of DNS, en 2 invoer velden die bijden moeten gevuld zijn. + notities
-- Lijst met 5/10 (nog te bepalen) meest resentelijke Sessie met datum tijd, gemiddelde tijd, beste tijd, hvl DNF, plus know om details te zien
-- Sorteer systeem voor sessies (p5)
+- Lijst met pogingen van deze sessie
+- Opslaan van poging met datum tijd of DNS + notities
+- Lijst met de 5/10 (nog te bepalen) meest recente sessies met datum tijd, gemiddelde tijd, beste tijd, aantal DNF's, plus knop om details te zien
+  - De details zijn: notities, gemiddelde sessietijd, datum, beste sessietijd, aantal DNF's (p0.5)
+- Sorteersysteem voor sessies (p5)
+
+### Double
+
+> Deze hieronder wil je zowel voor beide singles van elke double run als voor alle singles hier bij elkaar.
+
+- PB all time double zien
+- PB week double zien
+- Average time all time
+- Average time deze week
+- Knop naar statistiekpagina
+- Knop voor Start sessie (dat beeld komt onder de top bar, met Start sessie grayed out)
+
+#### Top bar
+
+> Deze hieronder wil je zowel voor beide singles van elke double run als voor alle singles hier bij elkaar.
+
+- PB sessie single zien (p2)
+- Average time all time (p2)
+- Hoelang de sessie duurt (p2)
+- Sessie afronden met bevestiging (p2)
+
+#### Sessie
+
+- Lijst met pogingen van deze sessie
+- Opslaan van poging met datum tijd, of DNS, en 2 invoervelden die beide gevuld moeten zijn, + notities
+- Lijst met de 5/10 (nog te bepalen) meest recente sessies met datum tijd, gemiddelde tijd, beste tijd, aantal DNF's, plus knop om details te zien
+- Sorteersysteem voor sessies (p5)
 
 ## Competitie
 
 ### Top bar (p5)
 
 - Competitie PB best
-- Personalen single PB
-- Last comp avarage
-- last comp Best
-- knop naar statestieken
-- Knop starten nieuwe compititie
+- Personal single PB
+- Last comp average
+- Last comp best
+- Knop naar statistieken
+- Knop om een nieuwe competitie te starten
   - 3 invoervelden voor tijd of DNF
-  - opslaan van compititie
+  - Opslaan van competitie
 
-- Lijst met alle compitites, met beste tijd gemiddelde tijd hvl DNF, Plaats
+- Lijst met alle competities, met beste tijd, gemiddelde tijd, aantal DNF's, plaats
 
 ## Training
 
-### Kracht Training 
+### Krachttraining
 
 - Opslaan van oefening met kg, sec, datum, reps, sets (p2)
-- elke set is een nieuwe invoer bar voor sec kg + hvl reps gedaan (p2)
-- tabel bij elke oefening van de vorige 5/10 keer dat ze gedaan zijn (p3)
-- Toevoegen van nieuwe kracht oefenig, met opties voor kg, sec, soort oefening(p2)
+- Elke set is een nieuwe invoerbalk voor sec, kg + aantal gedane reps (p2)
+- Tabel bij elke oefening van de vorige 5/10 keer dat die gedaan is (p3)
+- Toevoegen van nieuwe krachtoefening, met opties voor kg, sec, soort oefening (p2)
 
-### Calestenics (p4)
+### Calisthenics (p4)
 
 - Opslaan van oefening met kg, sec, datum, reps, sets
-  - elke set is een nieuwe invoer bar voor sec kg + hvl reps gedaan
-- tabel bij elke oefening van de vorige 5/10 keer dat ze gedaan zijn
-- Toevoegen van nieuwe kracht training, met opties voor kg, sec, soort training
+  - Elke set is een nieuwe invoerbalk voor sec, kg + aantal gedane reps
+- Tabel bij elke oefening van de vorige 5/10 keer dat die gedaan is
+- Toevoegen van nieuwe krachttraining, met opties voor kg, sec, soort training
