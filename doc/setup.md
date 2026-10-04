@@ -20,8 +20,7 @@ Versions are those installed on 2026-10-04.
 
 ### Bootstrap
 
-Run in WSL, in this order. Steps 1, 3 and 4 were run on 2026-10-04 with the step
-2 variables set for the command only.
+Run in WSL, in this order. All steps were run on 2026-10-04.
 
 1. .NET SDK, no root needed:
    ```sh
@@ -71,8 +70,7 @@ signing and no store listing.
   export PATH="$DOTNET_ROOT:$DOTNET_ROOT/tools:$PATH"
   export JAVA_HOME="$HOME/.jdk/microsoft-openjdk"
   ```
-  The `export JAVA_HOME` line comes after the existing unexported
-  `JAVA_HOME=...` line, so this value wins.
+  Remove or comment out any other `JAVA_HOME` line in `~/.bashrc`.
 - when:     once per machine
 - expected: a new shell finds `dotnet`, and the Android build uses Microsoft
   OpenJDK

@@ -39,7 +39,7 @@
 	</PropertyGroup>
 
 	<ItemGroup>
-		<!-- PROVISIONAL: the launcher icon, splash screen and colours are the template's placeholders; the look is not decided. -->
+		<!-- DEFERRED: the look; the launcher icon, splash screen and colours are the template's placeholders — doc/deferred.md -->
 		<!-- App Icon -->
 		<MauiIcon Include="Resources\AppIcon\appicon.svg" ForegroundFile="Resources\AppIcon\appiconfg.svg" Color="#512BD4" />
 
