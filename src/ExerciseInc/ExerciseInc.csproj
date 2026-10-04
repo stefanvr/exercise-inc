@@ -22,9 +22,8 @@
 		<!-- Display name: the app name in doc/app.md › Interaction. The title bar reads it at runtime. -->
 		<ApplicationTitle>Exercise Inc</ApplicationTitle>
 
-		<!-- App Identifier -->
-		<!-- PROVISIONAL: placeholder application ID; settle it before the app stores data or is released (doc/architecture.md › Rules). -->
-		<ApplicationId>com.companyname.exerciseinc</ApplicationId>
+		<!-- App Identifier: fixed, doc/architecture.md › Rules. -->
+		<ApplicationId>nl.svrinc.exerciseinc</ApplicationId>
 
 		<!-- Versions -->
 		<ApplicationDisplayVersion>1.0</ApplicationDisplayVersion>

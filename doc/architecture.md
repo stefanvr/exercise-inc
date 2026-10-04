@@ -24,10 +24,9 @@
   assemblies to the device separately, through the build's own adb. Here the
   APK is installed through the Windows adb (`doc/setup.md`), so it has to be
   self-contained.
-- **Application ID.** It identifies the app on a phone: changing it later
-  installs a different app, which does not see the old app's data.
-  PROVISIONAL: the application ID in the app project is a placeholder; settle
-  it before the app stores data or is released.
+- **The application ID is fixed.** It identifies the app on a phone: changing
+  it installs a different app, which does not see the old app's data. The value
+  is in the app project.
 
 ## Verification
 
