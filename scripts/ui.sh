@@ -1,4 +1,5 @@
-# Helpers to drive the app on the emulator through adb, for surface checks.
+# Helpers to drive the app on the emulator or the phone through adb, for surface
+# checks.
 # Source it, then use the functions:
 #
 #   . scripts/ui.sh
@@ -8,14 +9,16 @@
 #   texts                       # print the texts on screen
 #
 # Layout dumps and screenshots go to $UI_OUT (default /tmp/exercise-inc-ui).
+# The device is $UI_DEVICE: -e for the emulator (default), -d for the phone on USB.
 
 UI_OUT=${UI_OUT:-/tmp/exercise-inc-ui}
+UI_DEVICE=${UI_DEVICE:--e}
 mkdir -p "$UI_OUT"
 
 # Dump the current layout to $UI_OUT/ui.xml.
 dump() {
-	adb shell uiautomator dump /sdcard/ui.xml >/dev/null 2>&1
-	adb shell cat /sdcard/ui.xml > "$UI_OUT/ui.xml"
+	adb $UI_DEVICE shell uiautomator dump /sdcard/ui.xml >/dev/null 2>&1
+	adb $UI_DEVICE shell cat /sdcard/ui.xml > "$UI_OUT/ui.xml"
 }
 
 # Print the centre of the n-th (default 1st) node whose attributes match a regex.
@@ -36,21 +39,21 @@ tap() {
 	dump
 	local point
 	point=$(center "$1" "${2:-1}") || return 1
-	adb shell input tap $point
+	adb $UI_DEVICE shell input tap $point
 }
 
 # Replace the n-th text field's value; an empty value clears it.
 field() {
 	tap 'class="android.widget.EditText"' "$1" || return 1
-	adb shell input keyevent KEYCODE_MOVE_END
-	for _ in 1 2 3 4 5 6; do adb shell input keyevent KEYCODE_DEL; done
-	[ -n "$2" ] && adb shell input text "$2"
+	adb $UI_DEVICE shell input keyevent KEYCODE_MOVE_END
+	for _ in 1 2 3 4 5 6; do adb $UI_DEVICE shell input keyevent KEYCODE_DEL; done
+	[ -n "$2" ] && adb $UI_DEVICE shell input text "$2"
 }
 
 # Screenshot to $UI_OUT/<name>.png, after an optional delay in seconds.
 shot() {
 	sleep "${2:-0}"
-	adb exec-out screencap -p > "$UI_OUT/$1.png"
+	adb $UI_DEVICE exec-out screencap -p > "$UI_OUT/$1.png"
 }
 
 # The texts on screen, in layout order.

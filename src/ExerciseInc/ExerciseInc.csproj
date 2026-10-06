@@ -38,6 +38,18 @@
 		<EmbedAssembliesIntoApk>true</EmbedAssembliesIntoApk>
 	</PropertyGroup>
 
+	<!-- Release is the phone's build: an APK signed with the release key, doc/architecture.md › Rules.
+	     Where the key is kept: doc/setup.md › Runtime. -->
+	<PropertyGroup Condition="'$(Configuration)' == 'Release'">
+		<AndroidPackageFormat>apk</AndroidPackageFormat>
+		<AndroidKeyStore>true</AndroidKeyStore>
+		<AndroidSigningKeyStore>$(HOME)/.config/exercise-inc/release.keystore</AndroidSigningKeyStore>
+		<AndroidSigningKeyAlias>exerciseinc</AndroidSigningKeyAlias>
+		<!-- One file per password: apksigner reads successive lines of a file it is given twice. -->
+		<AndroidSigningStorePass>file:$(HOME)/.config/exercise-inc/release.storepass</AndroidSigningStorePass>
+		<AndroidSigningKeyPass>file:$(HOME)/.config/exercise-inc/release.keypass</AndroidSigningKeyPass>
+	</PropertyGroup>
+
 	<ItemGroup>
 		<!-- DEFERRED: the look; the launcher icon, splash screen and colours other than the timer's are the template's placeholders — doc/deferred.md -->
 		<!-- App Icon -->

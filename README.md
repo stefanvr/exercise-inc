@@ -11,6 +11,7 @@ Prepare the machine first: `doc/setup.md`.
 dotnet build                 # build the app for Android
 dotnet test                  # run the unit tests
 scripts/run-android.sh       # build, install on the running emulator, open the app
+scripts/run-android.sh phone # Release build, install on the phone over USB, open it
 ```
 
 What each check proves: `doc/architecture.md` › Verification.
@@ -18,9 +19,11 @@ What each check proves: `doc/architecture.md` › Verification.
 ## Development affordances
 
 - Start the emulator: `doc/setup.md` › Manual steps › Emulator.
-- Screenshot of the emulator: `adb exec-out screencap -p > screen.png`.
-- Drive the app on the emulator from the shell: `. scripts/ui.sh`, then `tap`,
-  `field`, `shot`, `texts` (usage at the top of the file).
+- Screenshot: `adb -e exec-out screencap -p > screen.png` of the emulator,
+  `adb -d …` of the phone.
+- Drive the app from the shell: `. scripts/ui.sh` on the emulator, or
+  `UI_DEVICE=-d . scripts/ui.sh` on the phone, then `tap`, `field`, `shot`,
+  `texts` (usage at the top of the file).
 - Style preview, Debug builds only: timer list › ⋮ › Style preview. Every colour
   token with its name and value (`doc/style.md`).
 
