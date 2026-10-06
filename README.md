@@ -19,6 +19,8 @@ What each check proves: `doc/architecture.md` › Verification.
 
 - Start the emulator: `doc/setup.md` › Manual steps › Emulator.
 - Screenshot of the emulator: `adb exec-out screencap -p > screen.png`.
+- Drive the app on the emulator from the shell: `. scripts/ui.sh`, then `tap`,
+  `field`, `shot`, `texts` (usage at the top of the file).
 - Style preview, Debug builds only: timer list › ⋮ › Style preview. Every colour
   token with its name and value (`doc/style.md`).
 
