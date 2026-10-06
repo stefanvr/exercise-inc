@@ -19,6 +19,8 @@ What each check proves: `doc/architecture.md` › Verification.
 
 - Start the emulator: `doc/setup.md` › Manual steps › Emulator.
 - Screenshot of the emulator: `adb exec-out screencap -p > screen.png`.
+- Style preview, Debug builds only: timer list › ⋮ › Style preview. Every colour
+  token with its name and value (`doc/style.md`).
 
 ## Where truth lives
 

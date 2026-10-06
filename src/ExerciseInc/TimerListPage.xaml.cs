@@ -15,6 +15,9 @@ public partial class TimerListPage : ContentPage
 		InitializeComponent();
 		_store = store;
 		_clock = clock;
+#if DEBUG
+		ToolbarItems.Add(new ToolbarItem("Style preview", null, OnStylePreview, ToolbarItemOrder.Secondary));
+#endif
 	}
 
 	private SavedTimer? Selected => Timers.SelectedItem as SavedTimer;
@@ -61,4 +64,8 @@ public partial class TimerListPage : ContentPage
 			Show(null);
 		}
 	}
+
+#if DEBUG
+	private async void OnStylePreview() => await Navigation.PushAsync(new StylePreviewPage());
+#endif
 }
