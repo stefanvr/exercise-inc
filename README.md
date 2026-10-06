@@ -1,7 +1,7 @@
 # Exercise Inc
 
-An Android app built with .NET MAUI. For now it shows a greeting; what it is
-for is in `doc/product.md`.
+An Android app built with .NET MAUI. For now it holds interval timers; what it
+is for is in `doc/product.md`.
 
 ## Running it
 
@@ -9,22 +9,29 @@ Prepare the machine first: `doc/setup.md`.
 
 ```sh
 dotnet build                 # build the app for Android
+dotnet test                  # run the unit tests
 scripts/run-android.sh       # build, install on the running emulator, open the app
 ```
 
-There are no automated tests yet (`doc/architecture.md` › Verification).
+What each check proves: `doc/architecture.md` › Verification.
 
 ## Development affordances
 
 - Start the emulator: `doc/setup.md` › Manual steps › Emulator.
 - Screenshot of the emulator: `adb exec-out screencap -p > screen.png`.
+- Drive the app on the emulator from the shell: `. scripts/ui.sh`, then `tap`,
+  `field`, `shot`, `texts` (usage at the top of the file).
+- Style preview, Debug builds only: timer list › ⋮ › Style preview. Every colour
+  token with its name and value (`doc/style.md`).
 
 ## Where truth lives
 
 | question | answer lives in |
 |---|---|
 | intent, scope, product-wide decisions | `doc/product.md` |
+| vocabulary, domain rules, what is kept | `doc/domain.md` |
 | surfaces, interaction and wording | `doc/app.md` |
+| how it looks and sounds | `doc/style.md` |
 | stack, structure, technical rules, verification | `doc/architecture.md` |
 | preparing the machine; manual steps | `doc/setup.md` |
 | rejected and deferred options | `doc/deferred.md` |

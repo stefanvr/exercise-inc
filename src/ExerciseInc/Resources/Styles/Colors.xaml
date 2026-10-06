@@ -1,7 +1,8 @@
 <?xml version="1.0" encoding="UTF-8" ?>
 <ResourceDictionary 
     xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
-    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml">
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    x:Class="ExerciseInc.Resources.Styles.Colors">
 
     <!-- Note: For Android please see also Platforms\Android\Resources\values\colors.xml -->
 
@@ -17,6 +18,23 @@
     <Color x:Key="Magenta">#D600AA</Color>
     <Color x:Key="MidnightBlue">#190649</Color>
     <Color x:Key="OffBlack">#1f1f1f</Color>
+
+    <!-- Timer screen: doc/style.md › Visual. Each phase has its colour, a light
+         version for the flash in its last seconds, and a dimmed one for paused. -->
+    <Color x:Key="StartDelay">#1565C0</Color>
+    <Color x:Key="StartDelayLit">#73A3D9</Color>
+    <Color x:Key="StartDelayDimmed">#0B3360</Color>
+    <Color x:Key="Work">#C62828</Color>
+    <Color x:Key="WorkLit">#DD7E7E</Color>
+    <Color x:Key="WorkDimmed">#631414</Color>
+    <Color x:Key="Rest">#2E7D32</Color>
+    <Color x:Key="RestLit">#82B184</Color>
+    <Color x:Key="RestDimmed">#173F19</Color>
+    <Color x:Key="Done">#262626</Color>
+    <Color x:Key="TimerText">White</Color>
+
+    <!-- New timer: a field out of its range. -->
+    <Color x:Key="FieldError">#C62828</Color>
 
     <Color x:Key="Gray100">#E1E1E1</Color>
     <Color x:Key="Gray200">#C8C8C8</Color>
