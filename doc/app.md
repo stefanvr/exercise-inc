@@ -49,6 +49,9 @@ done. End and the end of the Done state return to the timer list.
 - Save is disabled while a value is out of its range or the settings match an
   existing timer. A field out of range shows its allowed range below it; a
   match shows the duplicate text.
+- While the keyboard is open it covers Cancel and Save; closing it (its ✓ or
+  back) shows them. DEFERRED: keeping them above the keyboard —
+  `doc/deferred.md`.
 
 ### Timer screen
 

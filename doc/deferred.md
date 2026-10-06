@@ -9,3 +9,4 @@
 | 2026-10-06 | Editing a timer's settings | deferred | The first timer work covers creating and deleting only. Revisit when the user asks. |
 | 2026-10-06 | EF Core with SQLite for persistence | rejected | A heavier dependency, a larger app and a slower start, for structure the data does not need yet. sqlite-net-pcl was chosen (`doc/architecture.md`). Revisit if the relational data outgrows it. |
 | 2026-10-06 | A JSON file or Android preferences for persistence | rejected | Not built for records; the plan's later data would force the timers to move to another store. |
+| 2026-10-06 | Keep New timer's Cancel and Save above the keyboard | deferred | Android 15+ draws the app under the keyboard; neither the soft-input resize mode nor MAUI's keyboard safe area moved the buttons. Closing the keyboard costs one tap. Revisit if it bothers in use. |
