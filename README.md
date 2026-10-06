@@ -1,7 +1,7 @@
 # Exercise Inc
 
-An Android app built with .NET MAUI. For now it shows a greeting; what it is
-for is in `doc/product.md`.
+An Android app built with .NET MAUI. For now it holds interval timers; what it
+is for is in `doc/product.md`.
 
 ## Running it
 
@@ -24,7 +24,9 @@ There are no automated tests yet (`doc/architecture.md` › Verification).
 | question | answer lives in |
 |---|---|
 | intent, scope, product-wide decisions | `doc/product.md` |
+| vocabulary, domain rules, what is kept | `doc/domain.md` |
 | surfaces, interaction and wording | `doc/app.md` |
+| how it looks and sounds | `doc/style.md` |
 | stack, structure, technical rules, verification | `doc/architecture.md` |
 | preparing the machine; manual steps | `doc/setup.md` |
 | rejected and deferred options | `doc/deferred.md` |
