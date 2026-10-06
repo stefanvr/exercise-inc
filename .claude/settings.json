@@ -23,6 +23,8 @@
       "Bash(npm run lint)",
       "Bash(dotnet build)",
       "Bash(dotnet build *)",
+      "Bash(dotnet test)",
+      "Bash(dotnet test *)",
       "Bash(scripts/run-android.sh)"
     ]
   },
