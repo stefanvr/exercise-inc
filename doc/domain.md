@@ -20,10 +20,10 @@
 - Durations are whole seconds; repeats is a whole number.
 - A timer has either no start delay or a start delay of at least 5 s.
 - Work and rest are at least 1 s; repeats is at least 1.
-- Each value has an upper bound. PROVISIONAL: the bounds are a default; their
-  values are in the code.
-- PROVISIONAL: no two timers have the same settings. A timer is its settings,
-  so a copy would add nothing.
+- Each value has an upper bound, so that a phase fits the `m:ss` countdown; the
+  bounds are in the code.
+- No two timers have the same settings. A timer is its settings, so a copy
+  would add nothing.
 - Settings do not change once a timer is created.
 
 ### Name
@@ -51,5 +51,5 @@ delay` when the timer has a start delay: `8 × 30/5 s · 10 s delay`,
 
 - Timers stay on the phone until the user deletes them. They survive closing
   the app and restarting the phone.
-- A started timer is not recorded. PROVISIONAL: when the app is closed, a
-  started timer is gone; the app reopens on the timer list.
+- A started timer is not recorded. When the app is closed, a started timer is
+  gone; the app reopens on the timer list.
