@@ -2,8 +2,8 @@
 
 ## References
 
-None yet: the look is deferred (`doc/deferred.md`). The timer list and the New
-timer page keep the platform's default look.
+None yet. The timer list and the New timer page keep the platform's default
+look. DEFERRED: the look — `doc/deferred.md`.
 
 ## Visual
 
@@ -21,4 +21,4 @@ Values live in `src/ExerciseInc/Resources/Styles/Colors.xaml`.
 
 ## Audible
 
-The app is silent. Sound is deferred (`doc/deferred.md`).
+The app is silent. DEFERRED: sound for timers — `doc/deferred.md`.

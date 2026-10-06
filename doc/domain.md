@@ -24,7 +24,8 @@
   bounds are in the code.
 - No two timers have the same settings. A timer is its settings, so a copy
   would add nothing.
-- Settings do not change once a timer is created.
+- Settings do not change once a timer is created. DEFERRED: editing a timer —
+  `doc/deferred.md`.
 
 ### Name
 
