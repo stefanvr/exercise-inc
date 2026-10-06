@@ -46,6 +46,13 @@
 - **The database carries a schema version from its first release.** Timers
   survive app updates (`doc/domain.md` › Data); each update that changes the
   schema migrates from the stored version.
+- **The phone gets the Release build, signed with the release key.** Android
+  installs an update only over an app signed with the same key; otherwise the
+  app must be uninstalled, which deletes its timers. The debug key is created
+  per machine; the release key is created once and backed up
+  (`doc/setup.md` › Runtime). The project signs every Release build with it,
+  so no Release build comes out signed with another key. Release builds are
+  APKs, which adb installs; an app bundle is only for a store.
 - **The application ID is fixed.** It identifies the app on a phone: changing
   it installs a different app, which does not see the old app's data. The value
   is in the app project.
@@ -57,3 +64,4 @@
 | build | the app compiles for Android | `README.md` › Running it: build |
 | unit | the domain rules hold | `README.md` › Running it: test |
 | surface | the app installs, launches and behaves as `doc/app.md` describes | `README.md` › Running it: run, then screenshots |
+| phone | the Release build installs over the app on the phone and opens | `README.md` › Running it: run on the phone |
