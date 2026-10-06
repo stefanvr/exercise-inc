@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!-- doc/app.md › Timer list -->
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:appmodel="clr-namespace:Microsoft.Maui.ApplicationModel;assembly=Microsoft.Maui.Essentials"
+             xmlns:storage="clr-namespace:ExerciseInc.Core.Storage;assembly=ExerciseInc.Core"
+             x:Class="ExerciseInc.TimerListPage"
+             Title="{x:Static appmodel:AppInfo.Name}">
+
+    <ContentPage.ToolbarItems>
+        <ToolbarItem Text="New" Clicked="OnNew" />
+    </ContentPage.ToolbarItems>
+
+    <Grid RowDefinitions="*,Auto">
+
+        <CollectionView x:Name="Timers"
+                        SelectionMode="Single"
+                        SelectionChanged="OnSelectionChanged">
+            <CollectionView.EmptyView>
+                <Label Text="No timers yet."
+                       Padding="16,24"
+                       HorizontalOptions="Center" />
+            </CollectionView.EmptyView>
+            <CollectionView.ItemTemplate>
+                <DataTemplate x:DataType="storage:SavedTimer">
+                    <Grid Padding="16,14">
+                        <VisualStateManager.VisualStateGroups>
+                            <VisualStateGroup Name="CommonStates">
+                                <VisualState Name="Normal" />
+                                <VisualState Name="Selected">
+                                    <VisualState.Setters>
+                                        <Setter Property="BackgroundColor"
+                                                Value="{AppThemeBinding Light={StaticResource Gray200}, Dark={StaticResource Gray600}}" />
+                                    </VisualState.Setters>
+                                </VisualState>
+                            </VisualStateGroup>
+                        </VisualStateManager.VisualStateGroups>
+                        <Label Text="{Binding Settings.Name}" FontSize="18" />
+                    </Grid>
+                </DataTemplate>
+            </CollectionView.ItemTemplate>
+        </CollectionView>
+
+        <Grid Grid.Row="1" ColumnDefinitions="*,*" ColumnSpacing="12" Padding="16">
+            <Button x:Name="StartButton" Text="Start" Clicked="OnStart" IsEnabled="False" />
+            <Button x:Name="DeleteButton" Grid.Column="1" Text="Delete" Clicked="OnDelete" IsEnabled="False" />
+        </Grid>
+
+    </Grid>
+</ContentPage>

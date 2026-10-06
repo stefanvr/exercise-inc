@@ -20,6 +20,8 @@
   (`doc/domain.md`, in `Timers/`) and their storage (`Storage/`). It depends on
   nothing in MAUI or Android; the app depends on it.
 - `tests/ExerciseInc.Core.Tests/`: unit tests of the domain rules.
+- `global.json`: makes `dotnet test` use Microsoft.Testing.Platform, which
+  xUnit v3 runs on.
 - `scripts/`: developer scripts.
 
 ## Rules

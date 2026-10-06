@@ -9,7 +9,7 @@
 
     <ShellContent
         Title="{x:Static appmodel:AppInfo.Name}"
-        ContentTemplate="{DataTemplate local:MainPage}"
-        Route="MainPage" />
+        ContentTemplate="{DataTemplate local:TimerListPage}"
+        Route="TimerList" />
 
 </Shell>
