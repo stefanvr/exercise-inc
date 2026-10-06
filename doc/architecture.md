@@ -40,6 +40,9 @@
   time to it. A monotonic clock would be immune to clock changes, but on Android
   it stops while the phone sleeps, and the timer must go on with the screen off
   (`doc/domain.md` › Starting a timer).
+- **The timer screen is a pushed page, not a modal.** MAUI shows a modal page
+  in a separate Android window, where hiding the status and navigation bars has
+  no effect; the timer screen must be full screen (`doc/app.md` › Timer screen).
 - **The database carries a schema version from its first release.** Timers
   survive app updates (`doc/domain.md` › Data); each update that changes the
   schema migrates from the stored version.
