@@ -9,10 +9,11 @@ Prepare the machine first: `doc/setup.md`.
 
 ```sh
 dotnet build                 # build the app for Android
+dotnet test                  # run the unit tests
 scripts/run-android.sh       # build, install on the running emulator, open the app
 ```
 
-There are no automated tests yet (`doc/architecture.md` › Verification).
+What each check proves: `doc/architecture.md` › Verification.
 
 ## Development affordances
 

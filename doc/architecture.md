@@ -13,10 +13,12 @@
 ## Structure
 
 - `ExerciseInc.slnx`: the solution.
-- `src/ExerciseInc/`: the app, a MAUI project: pages, view models, storage and
-  platform glue. `Platforms/Android/` holds the Android entry points.
-- `src/ExerciseInc.Core/`: the domain rules (`doc/domain.md`), a plain .NET
-  library. It depends on nothing in MAUI or Android; the app depends on it.
+- `src/ExerciseInc/`: the app, a MAUI project: pages and platform glue.
+  `Platforms/Android/` holds the Android entry points. Pages render what
+  `ExerciseInc.Core` computes.
+- `src/ExerciseInc.Core/`: a plain .NET library with the domain rules
+  (`doc/domain.md`, in `Timers/`) and their storage (`Storage/`). It depends on
+  nothing in MAUI or Android; the app depends on it.
 - `tests/ExerciseInc.Core.Tests/`: unit tests of the domain rules.
 - `scripts/`: developer scripts.
 
@@ -32,6 +34,10 @@
 - **Domain rules stay out of the app project.** A MAUI Android project cannot
   be referenced by tests that run on Linux, so the rules live in
   `ExerciseInc.Core`, which targets plain .NET.
+- **A started timer counts wall-clock time.** The app passes the current UTC
+  time to it. A monotonic clock would be immune to clock changes, but on Android
+  it stops while the phone sleeps, and the timer must go on with the screen off
+  (`doc/domain.md` › Starting a timer).
 - **The database carries a schema version from its first release.** Timers
   survive app updates (`doc/domain.md` › Data); each update that changes the
   schema migrates from the stored version.

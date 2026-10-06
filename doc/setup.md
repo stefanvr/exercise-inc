@@ -50,9 +50,9 @@ Run in WSL, in this order. All steps were run on 2026-10-04.
 
 ### Confirm it works
 
-1. `dotnet build` succeeds.
+1. `dotnet build` succeeds and `dotnet test` passes.
 2. Start the emulator (Manual steps › Emulator).
-3. `scripts/run-android.sh` installs the app and opens it on the start page.
+3. `scripts/run-android.sh` installs the app and opens it on the timer list.
 
 ## Runtime
 
