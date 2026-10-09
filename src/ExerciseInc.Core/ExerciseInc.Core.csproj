@@ -1,7 +1,7 @@
 <Project Sdk="Microsoft.NET.Sdk">
 
 	<!-- The domain rules and their storage, without MAUI or Android, so tests
-	     run on Linux: doc/architecture.md › Rules. -->
+	     run on Linux: doc/architecture/maui.md › Linux tests reach the rules only in a plain .NET library. -->
 	<PropertyGroup>
 		<TargetFramework>net10.0</TargetFramework>
 		<ImplicitUsings>enable</ImplicitUsings>

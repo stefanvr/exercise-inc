@@ -5,7 +5,7 @@ is for is in `doc/product.md`.
 
 ## Running it
 
-Prepare the machine first: `doc/setup.md`.
+Prepare the machine first: `doc/setup/index.md`.
 
 ```sh
 dotnet build                 # build the app for Android
@@ -14,11 +14,11 @@ scripts/run-android.sh       # build, install on the running emulator, open the 
 scripts/run-android.sh phone # Release build, install on the phone over USB, open it
 ```
 
-What each check proves: `doc/architecture.md` › Verification.
+What each check proves: `doc/architecture/index.md` › Verification.
 
 ## Development affordances
 
-- Start the emulator: `doc/setup.md` › Manual steps › Emulator.
+- Start the emulator: `doc/setup/android.md` › Create an Android emulator.
 - Screenshot: `adb -e exec-out screencap -p > screen.png` of the emulator,
   `adb -d …` of the phone.
 - Drive the app from the shell: `. scripts/ui.sh` on the emulator, or
@@ -35,8 +35,8 @@ What each check proves: `doc/architecture.md` › Verification.
 | vocabulary, domain rules, what is kept | `doc/domain.md` |
 | surfaces, interaction and wording | `doc/app.md` |
 | how it looks and sounds | `doc/style.md` |
-| stack, structure, technical rules, verification | `doc/architecture.md` |
-| preparing the machine; manual steps | `doc/setup.md` |
+| stack, structure, technical rules, verification; what code must respect of each technology | `doc/architecture/` |
+| preparing the machine and the phone; manual steps, by technology | `doc/setup/` |
 | rejected and deferred options | `doc/deferred.md` |
 | supplied material (input, not authority) | `doc/discovery/` |
 | open decisions | `git grep -n PROVISIONAL -- ':!.claude'` |

@@ -1,7 +1,7 @@
 <Project Sdk="Microsoft.NET.Sdk">
 
 	<PropertyGroup>
-		<!-- Android only: doc/architecture.md › Rules. -->
+		<!-- Android only: doc/architecture/maui.md › On Linux, a MAUI app targets Android only. -->
 		<TargetFramework>net10.0-android</TargetFramework>
 
 		<OutputType>Exe</OutputType>
@@ -22,7 +22,7 @@
 		<!-- Display name: the app name in doc/app.md › Interaction. The title bar reads it at runtime. -->
 		<ApplicationTitle>Exercise Inc</ApplicationTitle>
 
-		<!-- App Identifier: fixed, doc/architecture.md › Rules. -->
+		<!-- App Identifier: fixed, doc/architecture/android.md › The application ID is fixed. -->
 		<ApplicationId>nl.svrinc.exerciseinc</ApplicationId>
 
 		<!-- Versions -->
@@ -33,13 +33,13 @@
 	</PropertyGroup>
 
 	<!-- The APK is installed through the Windows adb, so it carries its assemblies:
-	     doc/architecture.md › Rules. -->
+	     doc/architecture/maui.md › A Debug APK installed through another adb embeds its assemblies. -->
 	<PropertyGroup Condition="'$(Configuration)' == 'Debug'">
 		<EmbedAssembliesIntoApk>true</EmbedAssembliesIntoApk>
 	</PropertyGroup>
 
-	<!-- Release is the phone's build: an APK signed with the release key, doc/architecture.md › Rules.
-	     Where the key is kept: doc/setup.md › Runtime. -->
+	<!-- Release is the phone's build: an APK signed with the release key, doc/architecture/index.md › Rules.
+	     Where the key is kept: doc/setup/android.md › Make the app's release key. -->
 	<PropertyGroup Condition="'$(Configuration)' == 'Release'">
 		<AndroidPackageFormat>apk</AndroidPackageFormat>
 		<AndroidKeyStore>true</AndroidKeyStore>

@@ -11,7 +11,7 @@ public sealed record SavedTimer(int Id, TimerSettings Settings);
 /// </summary>
 public sealed class TimerStore : IDisposable
 {
-    /// <summary>doc/architecture.md › Rules: the database carries a schema version.</summary>
+    /// <summary>doc/architecture/index.md › Rules: the database carries a schema version.</summary>
     public const int SchemaVersion = 1;
 
     private readonly SQLiteConnection _db;
