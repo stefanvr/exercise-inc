@@ -19,7 +19,7 @@
     <Color x:Key="MidnightBlue">#190649</Color>
     <Color x:Key="OffBlack">#1f1f1f</Color>
 
-    <!-- Timer screen: doc/style.md › Visual. Each phase has its colour, a light
+    <!-- A started timer: doc/style.md › Phase colours. Each phase has its colour, a light
          version for the flash in its last seconds, and a dimmed one for paused. -->
     <Color x:Key="StartDelay">#1565C0</Color>
     <Color x:Key="StartDelayLit">#73A3D9</Color>

@@ -19,7 +19,7 @@
 		       <MauiXaml Update="MyPage.xaml" Inflator="Runtime" /> (force runtime inflation) -->
 		<MauiXamlInflator>SourceGen</MauiXamlInflator>
 
-		<!-- Display name: the app name in doc/app.md › Interaction. The title bar reads it at runtime. -->
+		<!-- Display name: the app name in doc/app.md › Launcher › Wording. The title bar reads it at runtime. -->
 		<ApplicationTitle>Exercise Inc</ApplicationTitle>
 
 		<!-- App Identifier: fixed, doc/architecture/android.md › The application ID is fixed. -->

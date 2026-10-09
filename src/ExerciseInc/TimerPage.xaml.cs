@@ -87,7 +87,7 @@ public partial class TimerPage : ContentPage
 		_ => "Rest",
 	};
 
-	/// <summary>The colour token for the moment: doc/style.md › Visual.</summary>
+	/// <summary>The colour token for the moment: doc/style.md › Phase colours, Last seconds, Paused, Done.</summary>
 	private static string ColourOf(TimerMoment moment)
 	{
 		if (moment.Phase is not { } phase)

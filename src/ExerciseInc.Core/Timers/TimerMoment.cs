@@ -2,7 +2,7 @@ namespace ExerciseInc.Core.Timers;
 
 /// <summary>
 /// What a started timer shows at one moment: doc/app.md › Timer screen and
-/// doc/style.md › Visual.
+/// doc/style.md › Last seconds.
 /// </summary>
 /// <param name="Phase">Null when done.</param>
 /// <param name="Repeat">The current repeat, from 1. Null during the start delay and when done.</param>

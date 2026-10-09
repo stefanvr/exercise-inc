@@ -20,7 +20,7 @@ public class ColourTokenTests
             .ToHashSet();
     }
 
-    [Fact(DisplayName = "style › Visual: every phase has its colour, a light version and a dimmed one")]
+    [Fact(DisplayName = "style › Phase colours: every phase has its colour, a light version and a dimmed one")]
     public void EveryPhaseHasItsColours()
     {
         var keys = TokenKeys();
