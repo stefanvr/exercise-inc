@@ -2,7 +2,7 @@
 # Build the app, install it through the Windows adb and open it:
 #   scripts/run-android.sh          the Debug build, on the running emulator
 #   scripts/run-android.sh phone    the Release build, on the phone attached by USB
-# Machine preparation: doc/setup.md.
+# Machine preparation: doc/setup/index.md.
 set -euo pipefail
 cd "$(dirname "$0")/.."
 

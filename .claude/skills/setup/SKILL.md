@@ -7,7 +7,8 @@ description: Use when something outside the code must be prepared (tools, accoun
 
 `doc/setup.md` lets a person bring a fresh machine to a working development
 state, and the product to a running state, without asking anyone. Its shape is
-in `.claude/harness/documents.md`.
+in `.claude/harness/documents.md`. Steps for one technology go in its part,
+`doc/setup/<tech>.md`, as entries (`documents.md` › Technology).
 
 ## Write from evidence
 

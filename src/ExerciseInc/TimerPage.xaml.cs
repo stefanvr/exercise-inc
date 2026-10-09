@@ -13,6 +13,8 @@ public partial class TimerPage : ContentPage
 
 	public TimerPage(TimerSettings settings, TimeProvider clock)
 	{
+		// Set, not merged: doc/architecture/maui.md › Implicit styles in a page's merged dictionary do not apply.
+		Resources = new global::ExerciseInc.Resources.Styles.TimerScreen();
 		InitializeComponent();
 		_clock = clock;
 		_timer = StartedTimer.Start(settings, Now);
@@ -75,20 +77,21 @@ public partial class TimerPage : ContentPage
 			_ticker.Stop();
 			return;
 		}
-		PhaseLabel.Text = NameOf(phase).ToUpperInvariant();
+		PhaseLabel.Text = NameOf(phase);
 		CountdownLabel.Text = moment.Countdown;
 		RepeatLabel.Text = $"repeat {moment.Repeat} / {moment.Repeats}";
 	}
 
-	private static string NameOf(Phase phase) => phase switch
+	/// <summary>The phase as the timer screen names it: doc/app.md › Timer screen › Wording.</summary>
+	internal static string NameOf(Phase phase) => phase switch
 	{
 		Phase.StartDelay => "Start delay",
 		Phase.Work => "Work",
 		_ => "Rest",
 	};
 
-	/// <summary>The colour token for the moment: doc/style.md › Visual.</summary>
-	private static string ColourOf(TimerMoment moment)
+	/// <summary>The colour token for the moment: doc/style.md › Phase colours, Last seconds, Paused, Done.</summary>
+	internal static string ColourOf(TimerMoment moment)
 	{
 		if (moment.Phase is not { } phase)
 			return "Done";

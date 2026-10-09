@@ -55,4 +55,4 @@ delay` when the timer has a start delay: `8 × 30/5 s · 10 s delay`,
 - The phone's own backup includes the timers: when it is on, they come back
   after the app is reinstalled, or on a new phone.
 - A started timer is not recorded. When the app is closed, a started timer is
-  gone; the app reopens on the timer list.
+  gone.

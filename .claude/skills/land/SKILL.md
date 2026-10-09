@@ -6,7 +6,8 @@ description: "Loop phase Land. Use only after the user approves landing: reconci
 # Land
 
 Landing is a product and repository consistency step, not merely a merge. Only
-on the user's word, given for this branch.
+on the user's word, given for this branch: `WORK.md` › Landing approved, or, for
+trivial work, said in this session.
 
 ## 1. Reconcile
 

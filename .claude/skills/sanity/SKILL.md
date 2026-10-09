@@ -15,8 +15,11 @@ it.
 
 ## 1. Documents, internally
 
-- Every decision has one owner. No rule is stated in two places with different
-  content. Every pointer resolves.
+- Every decision has one owner. No rule is stated in two places, with the same
+  content or different. Every pointer resolves.
+- Dependencies (`documents.md` › Dependencies): no document points at one that
+  depends on it; `domain` and `style` name no surface; a part repeats no rule
+  of its `index.md`; `product` › Decided is pointed at, not restated.
 - Vocabulary: the terms in `doc/domain.md` › Language are used unchanged
   elsewhere. No synonyms for one concept; no undefined term.
 - Product documents name no technology. `doc/architecture.md` states no product
@@ -25,11 +28,15 @@ it.
   instances copied from code.
 - No option in `doc/deferred.md` is stated as decided elsewhere.
 - No document is past the growth limit (`documents.md` › Growth).
+- In a technology's part, every issue and work entry has a `Seen:` line, and no
+  entry's heading names a project part (`documents.md` › Technology).
 
 ## 2. Documents, code and tests
 
+- Run the trace command (`documents.md` › Traceability); its gaps are
+  candidate findings.
 - Spec → tests: every rule in `domain`, `app` and `style` has a check or a
-  named manual inspection.
+  named manual inspection, beyond its section having a test.
 - Tests → spec: every test asserting product behaviour names an owning section
   that exists and still says that.
 - Code → spec: behaviour in code with no owning rule (orphan behaviour); rules
@@ -44,6 +51,8 @@ it.
   reachable; every index entry exists.
 - `doc/setup.md` matches the project: versions, scripts, environment names.
 - Dev affordances are gated from production.
+- Where `doc/style.md` exists, the style page exists and shows every token and
+  pattern it names (`style-preview`).
 - `WORK.md` is in no commit and absent on `main`; no stale `work/` branches,
   no leftover proof code.
 

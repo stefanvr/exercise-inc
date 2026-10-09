@@ -1,8 +1,9 @@
+using ExerciseInc.Core.Storage;
 using ExerciseInc.Core.Timers;
 
 namespace ExerciseInc.Core.Tests;
 
-public class SettingsTests
+public sealed class SettingsTests : TempDatabase
 {
     [Fact(DisplayName = "domain › Settings: a timer has no start delay or one of at least 5 s")]
     public void StartDelayAbsentOrAtLeastFive()
@@ -37,6 +38,15 @@ public class SettingsTests
     {
         Assert.Equal(new TimerSettings(10, 30, 5, 8), new TimerSettings(10, 30, 5, 8));
         Assert.NotEqual(new TimerSettings(10, 30, 5, 8), new TimerSettings(null, 30, 5, 8));
+    }
+
+    [Fact(DisplayName = "domain › Settings: the store refuses a second timer with the same settings")]
+    public void StoreRefusesDuplicate()
+    {
+        using var store = new TimerStore(Path);
+        store.Add(new TimerSettings(null, 30, 5, 8));
+
+        Assert.Throws<InvalidOperationException>(() => store.Add(new TimerSettings(null, 30, 5, 8)));
     }
 
     [Theory(DisplayName = "domain › Name: generated from the settings")]

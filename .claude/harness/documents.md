@@ -52,6 +52,9 @@ Product meaning that no other document owns: principles and constraints a user
 feels across the whole product.
 ```
 
+A rule in another document that applies a principle points to it
+(`doc/product.md` › Decided) and does not restate it.
+
 ### `doc/domain.md`
 
 ```markdown
@@ -78,19 +81,25 @@ domain has them.
 # App
 
 ## Activities
-What a user can do, as end state.
+| activity | what the user does, as end state | surface |
+|---|---|---|
 
-## Surfaces
-Each screen, panel, dialog, overlay or mode: what lives there, what persists,
-how a user moves between them.
+## Shared
+What every surface follows, stated once: the frame around the surfaces, moving
+between them, and the states they share, such as signed out, waiting,
+unreachable or failed.
 
-## Interaction
-Per surface or shared pattern: controls, gestures, feedback, and the wording a
-user reads.
+## <Surface>
+One section per screen, panel, dialog, overlay or mode: what lives there, what
+persists, its controls, gestures and feedback, which style pattern each part
+uses, and the wording a user reads. Only what is its own; a shared rule is not
+restated.
 ```
 
-Structure only. Spacing, colour, type and sound character belong in
-`doc/style.md`. Domain rules are referenced by their term, not restated.
+Structure only. A sketch shows what is on a surface and in what order, not how
+it looks. How a pattern looks, and every sound, belong in `doc/style.md`;
+which sound an interaction makes, or that it stays silent, belongs here. Domain
+rules are referenced by their term, not restated.
 
 ### `doc/style.md`
 
@@ -101,17 +110,25 @@ Structure only. Spacing, colour, type and sound character belong in
 Per sense, what it should feel like, and the references it is measured against.
 
 ## Visual
-Rules for palette, type, spacing, motion, and states.
-Values live in <the token source>.
+Values live in <the token source>; <the style page> shows every token and
+pattern.
+
+### <Pattern>
+One section per pattern — palette, type, spacing, controls, lists and tables,
+the frame, motion, states: the rules that hold wherever the pattern is used.
 
 ## Audible
-Per trigger (a domain event or interaction, by its term): whether it sounds,
-its character, variations, and deliberate silence.
 Definitions live in <the sound source>.
+
+### <Sound>
+One section per sound, by its role: its character and variations.
 ```
 
-Visual and audible references may come from different sources. Style owns what
-is perceived, not what causes it.
+Style names no surface (Dependencies): a rule that holds on one surface only is
+a pattern that surface uses, and `app` names the use. A token is named as the
+token source names it, and its value is left there. Visual and audible
+references may come from different sources. Style owns what is perceived, not
+what causes it.
 
 ### `doc/architecture.md`
 
@@ -169,7 +186,8 @@ to confirm it is running correctly.
 | 2026-01-31 | <the option> | deferred | <why, and the condition to revisit> |
 ```
 
-One table for every concern. Replace a row when its option is later taken up;
+One table for every concern of the project; the harness keeps its own
+(`.claude/CLAUDE.md` › Changing the harness). Replace a row when its option is later taken up;
 the owning document then states it as decided.
 
 ### `doc/discovery/`
@@ -179,6 +197,27 @@ supplied. It explains intent; it is not authority and may be wrong on details or
 order. Where it is incomplete for the current work, say what is missing, and add
 what the user supplies. Accepted content is written into the owning document;
 discovery material is not maintained to match later decisions.
+
+## Dependencies
+
+The documents depend in one direction. A document points at what it depends on
+and never at what depends on it.
+
+| document | depends on |
+|---|---|
+| `product` | nothing |
+| `domain` | `product` |
+| `style` | `product` |
+| `app` | `product`, `domain`, `style` |
+| `architecture`, `setup` | all of the above |
+
+Every document uses the terms of `doc/domain.md` › Language; that is the
+vocabulary, not a dependency.
+
+The test of placement: a different `style` restyles the product without a
+change to `app`, and a different `architecture` rebuilds it without a change to
+the product documents. A rule that fails the test is in the wrong document. Read
+together, the documents are enough to build the product again.
 
 ## Writing
 
@@ -194,6 +233,11 @@ discovery material is not maintained to match later decisions.
 - **Decided wording is quoted exactly**, in the document that owns the surface.
 - **Pointers, not copies.** When another document owns a rule, name it and
   point; do not restate it.
+- **Stand alone.** A spec document's rules, values and reasons are readable
+  from this repository alone. What another project settles for this one is
+  brought in: its substance into the owning document, its assets into the
+  repository. Links to the documentation of the technology used, to standards
+  and to external services stay links.
 - **Elaborate where it changes understanding:** surprising rules, exceptions,
   boundaries that are easy to misuse. Do not explain the obvious.
 
@@ -206,7 +250,64 @@ reasons, turn `doc/<name>.md` into a directory:
 - `doc/<name>/<part>.md` — one per area of the product: a domain area, a
   surface, a sense. Never one per feature, work item or date.
 
+A part holds only its own rules; one common to all parts is stated in
+`index.md` and not repeated in a part. In `doc/app/`, `index.md` holds
+Activities and Shared, and the Activities table names each surface's part: it
+is the list of parts.
+
 Move the text; leave no stubs. Update the README index and every pointer.
+
+## Technology
+
+What the project knows of a technology it uses sits in a part per technology:
+the steps that prepare it in `doc/setup/<tech>.md`, the behaviour code and
+checks must respect in `doc/architecture/<tech>.md`. The first such part turns
+its document into a directory (Growth). Knowledge goes in the part of the
+technology it is about, not of the one the work was on; a trap met while doing
+a setup step stays in that step.
+
+These parts are written so the next project can take them in: `tech` › Onboard
+a technology fills them from the factory's kb, and the factory harvests them
+back. Each `##` section is an entry or a project rule. An entry's heading
+states its claim and names no project part; it is the entry's identity in
+every project, so an onboarded entry keeps it word for word.
+
+**Issue**: something that behaves other than it appears.
+
+```markdown
+## <the claim, stated as a fact>
+Seen: <project>, <date>, <tool> <version>
+
+- **What happens.**
+- **Why it misleads.**
+- **Safe pattern.**
+- **Verify.**
+- **Stops applying.**
+```
+
+**Work**: a pattern that proved itself.
+
+```markdown
+## <the pattern, stated as a claim>
+Seen: <project>, <date>, <tool> <version>
+
+- **Pattern.**
+- **Verify.**
+- **Stops applying.**
+```
+
+**Setup step**: a manual step as in `doc/setup.md` above, as a `##` section,
+with no `Seen:`.
+
+- `Seen:` says where and when the entry last held, with which versions. A later
+  sighting, here or elsewhere, replaces it.
+- An onboarded entry's placeholders take this project's values; its heading
+  stays.
+- A project's own rule about the technology — a choice, a value, a boundary —
+  is a section of its own, without `Seen:`, never text inside an entry.
+- A trap or pattern found here that would hold in any project on the
+  technology is a new entry, with `Seen:`. One that holds only here is a
+  project rule.
 
 ## Markers
 
@@ -233,28 +334,42 @@ inline in a document where a document calls it open. Both, when both apply.
 - A test asserting product behaviour with no owning section is a missing spec,
   not a free test.
 - Passing tests prove only the requirements they encode.
+- The project has a trace command, listed in `README.md`. It reports, for each
+  section of `domain`, `app` and `style`, the tests that name it; the sections
+  no test names; and the tests that name no section, or one that does not
+  exist. `present` shows it for the sections changed on the branch; `sanity`
+  runs it whole. A section no test names is checked by a named manual
+  inspection, or it is a gap.
 
 ## `WORK.md`
 
 The work in progress on the current branch. A local file, never committed:
-`.gitignore` lists it. It survives sessions on this machine, not a move to
+`.gitignore` lists it. It carries the work across sessions on this machine —
+each phase boundary ends one (`.claude/CLAUDE.md` › The loop) — not a move to
 another; it is deleted at landing.
 
 ```markdown
 # Work: <one line>
 
 Branch:    work/<slug>
+Phase:     specify | build | present | land
 Why:       <the request, quoted where possible, or the gap it closes>
 Spec:      pending | approved <date> | not needed — <reason>
+Landing:   pending | approved <date>
 Done when: <the evidence: the commands and what they must show; what is
            inspected on the surface, and how>
 
 ## Plan
 - [ ] <only steps whose state must survive a session>
 
+## For review
+- <what `present` reports that the repository does not show: each delegation
+  (kind, model, what came back); each learning to propose, with the document
+  that would own it>
+
 ## Next
 - <requests the user made during this work that belong to later work, in order>
 ```
 
-`WORK.md` holds no decisions. A decision goes into the document that owns it,
-the moment it is made.
+`WORK.md` holds no decisions beyond the gates' state in Spec and Landing. A
+decision goes into the document that owns it, the moment it is made.
