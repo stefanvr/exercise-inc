@@ -55,7 +55,8 @@ return to the timer list. It keeps the platform's default look.
 - The name line shows the name while all values are valid.
 - Save is disabled while a value is out of its range or the settings match an
   existing timer. A field out of range shows its allowed range below it; a
-  match shows the duplicate text.
+  match shows the duplicate text. Both are error text (`doc/style.md` › Error
+  text).
 - While the keyboard is open it covers Cancel and Save; closing it (its ✓ or
   back) shows them. DEFERRED: keeping them above the keyboard —
   `doc/deferred.md`.
@@ -75,7 +76,8 @@ return to the timer list. It keeps the platform's default look.
 
 It fills the whole screen: no title bar, and the phone's status and navigation
 bars are hidden. It shows the started timer as running, paused or done. End and
-the end of the Done state return to the timer list.
+the end of the Done state return to the timer list. Its text and buttons are on
+colour (`doc/style.md` › On colour).
 
 - **Running**: the phase as a phase label (`doc/style.md` › Phase label), the
   countdown (› Countdown), the repeat line, Pause and End. The background has

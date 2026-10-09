@@ -33,7 +33,7 @@
     <Color x:Key="Done">#262626</Color>
     <Color x:Key="TimerText">White</Color>
 
-    <!-- New timer: a field out of its range. -->
+    <!-- doc/style.md › Error text. -->
     <Color x:Key="FieldError">#C62828</Color>
 
     <Color x:Key="Gray100">#E1E1E1</Color>

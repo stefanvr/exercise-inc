@@ -6,9 +6,9 @@ None yet. DEFERRED: the look — `doc/deferred.md`.
 
 ## Visual
 
-Colours live in `src/ExerciseInc/Resources/Styles/Colors.xaml`, the timer's
-type in `TimerScreen.xaml` beside it; the style preview shows every token and
-pattern (`README.md` › Development affordances).
+Colours live in `src/ExerciseInc/Resources/Styles/Colors.xaml`, the type and
+buttons drawn on colour in `TimerScreen.xaml` beside it; the style preview shows
+every token and pattern (`README.md` › Development affordances).
 
 ### Phase colours
 
@@ -36,6 +36,15 @@ The largest element on its screen, readable from a few metres away.
 ### Phase label
 
 The phase, in capitals.
+
+### On colour
+
+On the phase colours and the done background, text is white, and a button is
+white text in a white outline over a faint white fill.
+
+### Error text
+
+Text that says why a value is not accepted is red.
 
 ## Audible
 

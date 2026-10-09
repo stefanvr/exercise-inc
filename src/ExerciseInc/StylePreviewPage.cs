@@ -56,6 +56,19 @@ public class StylePreviewPage : ContentPage
 		foreach (var phase in Phases)
 			page.Add(Swatch(tokens[phase.ToString()], PhaseLabel(phase)));
 
+		page.Add(Heading("On colour"));
+		foreach (var background in Phases.Select(phase => phase.ToString()).Append("Done"))
+			page.Add(Swatch(tokens[background], new VerticalStackLayout
+			{
+				Spacing = 8,
+				Children = { new Label { Text = "Text" }, new Button { Text = "Button" } },
+			}));
+		page.Add(Caption("TimerText", Use("TimerText")));
+
+		page.Add(Heading("Error text"));
+		page.Add(new Label { Text = "This timer already exists.", TextColor = Use("FieldError") });
+		page.Add(Caption("FieldError", tokens["FieldError"]));
+
 		page.Add(Heading("Other tokens"));
 		foreach (var (key, color) in tokens.Where(token => !shown.Contains(token.Key)))
 			page.Add(TokenRow(key, color, new Label()));
