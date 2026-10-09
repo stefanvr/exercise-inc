@@ -13,7 +13,7 @@ public partial class TimerPage : ContentPage
 
 	public TimerPage(TimerSettings settings, TimeProvider clock)
 	{
-		// Set, not merged: implicit styles in a page's merged dictionary do not apply.
+		// Set, not merged: doc/architecture/maui.md › Implicit styles in a page's merged dictionary do not apply.
 		Resources = new global::ExerciseInc.Resources.Styles.TimerScreen();
 		InitializeComponent();
 		_clock = clock;

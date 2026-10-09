@@ -60,3 +60,20 @@ Seen: exercise-inc, 2026-10-06, .NET SDK 10.0.401, maui-android 10.0.401.1, Pixe
 - **Verify.** A second Release install over the app on the phone updates it in
   place, and its data stays.
 - **Stops applying.** When the app is published through a store.
+
+## Implicit styles in a page's merged dictionary do not apply
+Seen: exercise-inc, 2026-10-09, .NET SDK 10.0.401, MAUI 10.0.110 (XAML inflated by SourceGen), Android 16 emulator
+
+- **What happens.** A page merges a XAML resource dictionary into its
+  `Resources` (`<ResourceDictionary.MergedDictionaries>`); the dictionary's
+  implicit styles (no `x:Key`) do not reach the page's controls, which keep
+  the app's font and colour.
+- **Why it misleads.** Merging is the documented way to share a dictionary,
+  implicit styles included, and nothing fails at build or run time.
+- **Safe pattern.** Give the dictionary a code-behind class (`x:Class`) and set
+  it as the page's resources: `Resources = new MyStyles();` in the page's
+  constructor.
+- **Verify.** A control with no `Style` set shows the dictionary's implicit
+  style.
+- **Stops applying.** When implicit styles in a merged dictionary reach the
+  page's controls.
