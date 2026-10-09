@@ -44,7 +44,7 @@ public class NewTimerTests
         Assert.False(draft.CanSave);
     }
 
-    [Fact(DisplayName = "domain › Settings: no two timers have the same settings")]
+    [Fact(DisplayName = "app › New timer: Save is disabled while the settings match an existing timer")]
     public void DuplicateDisablesSave()
     {
         var draft = TimerDraft.Of("10", "30", "5", "8", [new TimerSettings(10, 30, 5, 8)]);
