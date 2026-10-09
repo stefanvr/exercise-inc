@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!-- The timer screen's styles, used by the timer page and the style preview:
+     doc/style.md › Countdown, Phase label. -->
+<ResourceDictionary
+    xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    x:Class="ExerciseInc.Resources.Styles.TimerScreen">
+
+    <Style TargetType="Label">
+        <Setter Property="TextColor" Value="{StaticResource TimerText}" />
+        <Setter Property="HorizontalOptions" Value="Center" />
+    </Style>
+
+    <Style TargetType="Button">
+        <Setter Property="TextColor" Value="{StaticResource TimerText}" />
+        <Setter Property="BackgroundColor" Value="#33FFFFFF" />
+        <Setter Property="BorderColor" Value="{StaticResource TimerText}" />
+        <Setter Property="BorderWidth" Value="2" />
+        <Setter Property="FontSize" Value="18" />
+        <Setter Property="HeightRequest" Value="56" />
+    </Style>
+
+    <!-- The largest element on its screen. -->
+    <Style x:Key="Countdown" TargetType="Label">
+        <Setter Property="TextColor" Value="{StaticResource TimerText}" />
+        <Setter Property="HorizontalOptions" Value="Center" />
+        <Setter Property="FontSize" Value="112" />
+        <Setter Property="FontAttributes" Value="Bold" />
+    </Style>
+
+    <!-- The phase, in capitals. -->
+    <Style x:Key="PhaseLabel" TargetType="Label">
+        <Setter Property="TextColor" Value="{StaticResource TimerText}" />
+        <Setter Property="HorizontalOptions" Value="Center" />
+        <Setter Property="FontSize" Value="40" />
+        <Setter Property="FontAttributes" Value="Bold" />
+        <Setter Property="TextTransform" Value="Uppercase" />
+    </Style>
+
+</ResourceDictionary>

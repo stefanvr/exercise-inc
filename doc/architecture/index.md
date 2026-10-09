@@ -57,4 +57,5 @@ What the code and checks must respect of each technology is in its part:
 | unit | the domain rules hold | `README.md` › Running it: test |
 | trace | every test names an existing section of `doc/`; which sections of domain, app and style no test names | `README.md` › Running it: trace |
 | surface | the app installs, launches and behaves as `doc/app.md` describes | `README.md` › Running it: run, then screenshots |
+| style preview | the preview shows every colour token and every pattern of `doc/style.md`, in order | `README.md` › Running it: check the style preview |
 | phone | the Release build installs over the app on the phone and opens | `README.md` › Running it: run on the phone |

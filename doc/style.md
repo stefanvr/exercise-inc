@@ -6,8 +6,9 @@ None yet. DEFERRED: the look — `doc/deferred.md`.
 
 ## Visual
 
-Values live in `src/ExerciseInc/Resources/Styles/Colors.xaml`; the style
-preview shows every token and pattern (`README.md` › Development affordances).
+Colours live in `src/ExerciseInc/Resources/Styles/Colors.xaml`, the timer's
+type in `TimerScreen.xaml` beside it; the style preview shows every token and
+pattern (`README.md` › Development affordances).
 
 ### Phase colours
 
