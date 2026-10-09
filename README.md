@@ -10,6 +10,8 @@ Prepare the machine first: `doc/setup/index.md`.
 ```sh
 dotnet build                 # build the app for Android
 dotnet test                  # run the unit tests
+dotnet run scripts/trace.cs  # each section of domain, app and style with the tests naming it, and the gaps
+dotnet run scripts/trace.cs --changed  # only the sections changed since main
 scripts/run-android.sh       # build, install on the running emulator, open the app
 scripts/run-android.sh phone # Release build, install on the phone over USB, open it
 ```
