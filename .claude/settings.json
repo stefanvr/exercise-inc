@@ -18,14 +18,14 @@
       "Bash(git commit *)",
       "Bash(git switch *)",
       "Bash(.claude/hooks/orient.sh)",
-      "Bash(npm test)",
-      "Bash(npm run build)",
-      "Bash(npm run lint)",
       "Bash(dotnet build)",
       "Bash(dotnet build *)",
       "Bash(dotnet test)",
       "Bash(dotnet test *)",
-      "Bash(scripts/run-android.sh)"
+      "Bash(scripts/run-android.sh)",
+      "Bash(dotnet run scripts/trace.cs)",
+      "Bash(dotnet run scripts/trace.cs *)",
+      "Bash(scripts/check-style-preview.sh)"
     ],
     "deny": [
       "Artifact",
