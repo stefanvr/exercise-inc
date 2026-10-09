@@ -105,6 +105,10 @@ Tests need not mirror source layout.
 
 Mirror only where doing so materially helps expose missing coverage.
 
+One test file holds one theme: a spec section, or sections that change
+together. Setup shared by several themes goes into a helper beside them. A
+reader then opens the theme that changed, not every theme of a surface.
+
 ## Prove behavior at the lowest truthful layer
 
 Place behavioral coverage at the lowest layer that can genuinely prove the behavior.

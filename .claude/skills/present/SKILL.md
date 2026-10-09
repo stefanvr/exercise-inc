@@ -14,9 +14,11 @@ description: "Loop phase Verify/Review. Use when checks pass: verify yourself, s
    say so: it is not verified.
 3. Compare the result with the spec — `git diff main -- doc/` and the owning
    sections — not with the implementation.
-4. Check that the tests encode the specified behaviour: every rule changed in
-   the spec has a check, and no passing test is taken as proof of a requirement
-   it does not encode.
+4. Check that the tests encode the specified behaviour: run the trace command
+   (`documents.md` › Traceability) and read, for each section changed on the
+   branch, the tests that name it against its rules. Every rule changed in the
+   spec has a check, and no passing test is taken as proof of a requirement it
+   does not encode.
 5. Check the repository: `git status`, `git diff main --stat`,
    `git log --oneline main..HEAD`. Only intended changes, no stray files.
 6. List the markers: `git grep -n PROVISIONAL -- ':!.claude'`.
@@ -41,6 +43,8 @@ Changed        what changed, in product terms
                each delegation: kind, model, what came back
 Verified       each check re-run, with its actual result;
                what was inspected on the surface, and how
+Traced         each section changed on the branch, with the tests that name
+               it, or its manual inspection, or `no check`
 Decisions      n1 … every open user-visible decision, including every
                PROVISIONAL marker a user would notice, at every review
                until it is settled or deferred
@@ -50,6 +54,8 @@ Proposes       p1 … learnings, each with the document that would own it;
                document revisions where reality contradicts stated intent;
                harness changes
 ```
+
+Delegations and learnings from earlier sessions are in `WORK.md` › For review.
 
 Propose a revision of a product document whenever reality contradicts it: what
 was specified turns out wrong, expensive or pointless. Name the contradiction,
@@ -64,9 +70,21 @@ or change first.
 | answer | action |
 |---|---|
 | changes what the work means | `specify` › Requirement changes |
+| reports a defect, or asks a correction it settles completely | a small fix: here (below); otherwise a `WORK.md` › Plan step, back to `build` |
 | settles a marker | record it in the owning document now; remove the marker |
 | defers a marker | `DEFERRED` marker and a `doc/deferred.md` row |
 | accepts a proposal | write it into its owning document on this branch |
-| rejects a proposal | a `doc/deferred.md` row |
-| asks for something beyond this work | `WORK.md` › Next |
-| approves landing | `land` |
+| rejects a proposal | a `doc/deferred.md` row; for a harness change, a `.claude/harness/deferred.md` row |
+| asks for something beyond this work, such as a new activity | `WORK.md` › Next; this work lands first |
+| approves landing | `Landing: approved <date>` |
+
+**A small fix here.** A fix is small when the answer leaves no decision open and
+it adds no new structure. Make it in this session, as `build` › Implement does:
+a rule the answer adds goes into its owning document first, then the check, then
+the code. Re-run the checks it touches and the full check command, and show
+again only what changed. A fix that turns out larger goes back to `build`.
+
+Trivial work lands in this session on the user's word. Otherwise, once every
+answer is recorded and every small fix shown, set Phase — `land` when landing is
+approved, else the phase the answers send the work back to — and end the session
+(`.claude/CLAUDE.md` › Phase boundaries).

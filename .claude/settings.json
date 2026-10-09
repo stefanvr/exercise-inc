@@ -26,6 +26,14 @@
       "Bash(dotnet test)",
       "Bash(dotnet test *)",
       "Bash(scripts/run-android.sh)"
+    ],
+    "deny": [
+      "Artifact",
+      "ListAgents",
+      "ReadNotifications",
+      "ReportFindings",
+      "ScheduleWakeup",
+      "SendFeedback"
     ]
   },
   "hooks": {
@@ -35,6 +43,17 @@
           {
             "type": "command",
             "command": "\"$CLAUDE_PROJECT_DIR\"/.claude/hooks/orient.sh"
+          }
+        ]
+      }
+    ],
+    "PreToolUse": [
+      {
+        "matcher": "Bash|Read",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "\"$CLAUDE_PROJECT_DIR\"/.claude/hooks/read-guard.py"
           }
         ]
       }

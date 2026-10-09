@@ -10,7 +10,9 @@ to build and to check, and approved by the user where the spec gate applies.
 
 Do not turn a non-trivial request directly into implementation. Do not specify
 further than this work needs: a rule written ahead of the work is written from a
-worse understanding.
+worse understanding. A request larger than one slice: propose the smallest slice
+that runs end to end and confirm it with the user before asking about its
+details; later features wait for their own work.
 
 ## 1. Discover
 
@@ -41,15 +43,15 @@ missing.
 **A new product** (no `doc/product.md`): ask only enough to write its Intent and
 choose the first work. What it is, for whom, and why are open questions: ask
 them as such (`.claude/CLAUDE.md` › Question dialog). Propose the first work as
-the smallest slice that runs end to end and confirm it with the user before
-asking about its details; later features wait for their own work. Write
-`README.md` and `doc/product.md` as the first spec.
+the smallest slice (above). Write `README.md` and `doc/product.md` as the first
+spec.
 
 ## 2. Open
 
 1. From `main`: `git switch -c work/<slug>`.
 2. Unless the work is trivial, write `WORK.md` (template in
-   `.claude/harness/documents.md`) with `Spec: pending`.
+   `.claude/harness/documents.md`) with `Phase: specify`, `Spec: pending` and
+   `Landing: pending`.
 
 ## 3. Language
 
@@ -69,6 +71,9 @@ Apply the decision rule to each open decision.
 - **Anything with a surface**: show a sketch before writing the rule — an ASCII
   layout, a mockup, or a screenshot of the current state with the change marked.
   Reacting to a picture is cheaper than reacting to prose.
+- **A visual or audible detail**: decide it as a pattern in `doc/style.md`, or
+  use one already there, so every surface that uses the pattern has it
+  (`documents.md` › Dependencies).
 
 The spec covers, where relevant: product behaviour; domain rules and vocabulary;
 workflow and interaction; visual and audible behaviour; data and persistence,
@@ -81,8 +86,8 @@ including what survives; error and edge behaviour; acceptance evidence.
 2. Rejected options become `doc/deferred.md` rows.
 3. Acceptance evidence goes into `WORK.md` › Done when.
 4. Check the spec internally: the touched sections agree with each other and
-   with the rest of the documents, use the same vocabulary, and define
-   compatible behaviour.
+   with the rest of the documents, use the same vocabulary, define compatible
+   behaviour, and keep the direction of `documents.md` › Dependencies.
 5. Commit: `Specify <the change>`.
 
 ## 6. Gate
@@ -98,7 +103,8 @@ before it started. Then:
 On approval set `Spec: approved <date>`. On a change, revise and ask
 again. When the gate does not apply, set `Spec: not needed — <reason>`.
 
-Continue with `build`.
+Trivial work continues with `build` in this session. Otherwise set
+`Phase: build` and end the session (`.claude/CLAUDE.md` › Phase boundaries).
 
 ## Requirement changes
 

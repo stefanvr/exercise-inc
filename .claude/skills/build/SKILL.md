@@ -63,7 +63,11 @@ apply it unless `doc/architecture.md` has a more specific rule.
   `software-design.md`: write it into `doc/architecture.md` in the same work.
 - A dev affordance (fixture, preview page, debug entry point): gated from
   production, reachable by the tests, and listed in `README.md` when created.
+- A change to `doc/style.md`, the tokens or the sounds: run `style-preview` in
+  the same work.
 - Keep `WORK.md` › Plan current where a session may end mid-work.
+- A learning (`.claude/CLAUDE.md` › Learning): note it in `WORK.md` › For
+  review when it happens. The session that presents does not remember it.
 
 ## 3. Delegate
 
@@ -80,9 +84,11 @@ Report:          a summary of the diff, the check output, and every decision
 ```
 
 Choose its model per call (CLAUDE.md › Delegation). Inspect the diff and re-run
-the check yourself before building on the result.
+the check yourself before building on the result. Note the delegation — kind,
+model, what came back — in `WORK.md` › For review.
 
 ## Done
 
-Every check in `WORK.md` › Done when passes, run by you. Continue with
-`present`.
+Every check in `WORK.md` › Done when passes, run by you. Trivial work continues
+with `present` in this session. Otherwise set `Phase: present` and end the
+session (`.claude/CLAUDE.md` › Phase boundaries).

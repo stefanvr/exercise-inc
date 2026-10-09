@@ -73,6 +73,15 @@ A document that does not exist yet has settled nothing; it is created when the
 first rule it owns is decided. A document may grow into a directory; the README
 index then points at it.
 
+**Reading.** Everything read stays in context and is re-sent on every later
+turn. Read a document by its sections: list its headings (`grep -n '^#'`), then
+read the sections the work touches. Search `doc/deferred.md` and
+`doc/discovery/` with `git grep -n -i <term>`; never read them whole. Read code
+by symbol or line range; a whole file only when the work changes most of it.
+The `read-guard` hook refuses printing more than 150 lines of a file at once,
+by `cat`, `nl`, `sed -n` or Read without a limit; a whole file is read with an
+explicit Read limit.
+
 **Authority**, highest first:
 
 1. explicit user decisions;
@@ -160,13 +169,19 @@ Two gates belong to the user:
 
 **Trivial work** — no unsettled user-visible decision, no stack choice, no
 change to documented meaning — still uses a branch and the landing gate, and
-skips `WORK.md` and the spec gate.
+skips `WORK.md` and the spec gate. It runs in one session.
+
+**Phase boundaries.** A session ends when `specify`, `build` or `present` ends:
+context only grows, and every token in it is re-sent on every turn. Before
+ending, put what the next phase needs into the repository or `WORK.md`, set
+`WORK.md` › Phase to the next phase, and ask the user to run `/clear`.
 
 **Orient.** At every start, `/clear` and compaction the SessionStart hook prints
 the branch, uncommitted changes, recent commits, `WORK.md` and the open markers.
-Re-run it with `.claude/hooks/orient.sh`. Resume the work in `WORK.md`. Without
-`WORK.md`, the next work comes from the user. Without `doc/product.md`, the
-product has not started: the first work establishes its intent (`specify`).
+Re-run it with `.claude/hooks/orient.sh`. Resume the work in `WORK.md` with the
+skill its Phase names. Without `WORK.md`, the next work comes from the user.
+Without `doc/product.md`, the product has not started: the first work
+establishes its intent (`specify`).
 
 There is no backlog beyond `WORK.md` › Next, which holds requests the user made
 during the current work, in order. Do not invent a queue.
@@ -222,6 +237,9 @@ The repository is durable communication with the next human or agent.
 - Product documents (`product`, `domain`, `app`, `style`) are written without
   technology. A line naming a framework, host, file format or library belongs in
   `doc/architecture.md`.
+- Documents depend in one direction: `domain` and `style` name no surface;
+  `app` uses both. A different style or stack must not require rewriting the
+  other documents (`documents.md` › Dependencies).
 - One vocabulary: the terms in `doc/domain.md` are used unchanged in documents,
   code, tests, UI text and conversation.
 - `README.md` always exists. It gives a short description, how to run and test,
@@ -234,8 +252,9 @@ The repository is durable communication with the next human or agent.
 What is learned while working belongs in the repository, not in your memory.
 
 - A technical surprise, a working pattern, a tooling trap, a setup step: propose
-  it at the review as a `p` item naming the document that would own it. Write it
-  when the user accepts; record a rejection in `doc/deferred.md`.
+  it at the review as a `p` item naming the document that would own it; one
+  about a technology is an entry in its part (`documents.md` › Technology).
+  Write it when the user accepts; record a rejection in `doc/deferred.md`.
 - Auto-memory holds only how this user likes to work. Never save project facts,
   decisions or technical learnings there. If one is found there, propose moving
   it into the project.
@@ -261,4 +280,7 @@ the document that owns its subject; a technical rule in `doc/architecture.md`.
 Add nothing to the harness — a file, concept, phase, marker or skill — unless a
 concrete case cannot be handled by what is here and the addition is simpler than
 extending what is here. Harness changes are the user's: propose them as `p`
-items.
+items. A rejected or postponed one is a row in `.claude/harness/deferred.md`,
+not in `doc/deferred.md`; search it before proposing. An accepted one is made
+here on a work branch, raises the version and, once landed, goes to the
+factory's source (`.claude/harness/README.md` › Changing the harness).
